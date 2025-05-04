@@ -31,10 +31,10 @@ function error {
 }
 
 # Base raw github URL
-_raw_base="https://raw.githubusercontent.com/realashleybailey/nginx-proxy-manager-lxc/main/"
+_raw_base="https://raw.githubusercontent.com/siberianlove/nginx-proxy-manager-lxc/main/"
 # Operating system
-_os_type=alpine
-_os_version=3.16
+_os_type=debian
+_os_version=12-standard
 # System architecture
 _arch=$(dpkg --print-architecture)
 
@@ -98,7 +98,7 @@ _host_name=${_host_name:-nginx-proxy-manager}
 _bridge=${_bridge:-vmbr0}
 _memory=${_memory:-1024}
 _swap=${_swap:-0}
-_storage=${_storage:-local-lvm}
+_storage=${_storage:-local-zfs}
 _storage_template=${_storage_template:-local}
 
 # Test if ID is in use

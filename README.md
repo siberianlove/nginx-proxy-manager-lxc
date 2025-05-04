@@ -10,26 +10,26 @@ To create a new LXC container on Proxmox and setup Nginx Proxy Manager to run in
 ***Note:*** _This will create alpine container_
 
 ```bash
-curl -sL https://raw.githubusercontent.com/realashleybailey/nginx-proxy-manager-lxc/main/create.sh | bash -s
+curl -sL https://raw.githubusercontent.com/siberianlove/nginx-proxy-manager-lxc/main/create.sh | bash -s
 ```
 
 ### Command line arguments
-| argument           | default              | description                                            |
-|--------------------|----------------------|--------------------------------------------------------|
-| --id          | $nextid                   | container id                                           |
-| --bridge      | vmbr0                     | bridge used for eth0                                   |
-| --cores       | 1                         | number of cpu cores                                    |
-| --disksize    | 2G                        | size of disk                                           |
-| --hostname    | nginx-proxy-manager       | hostname of the container                              |
-| --memory      | 512                       | amount of memory                                       |
-| --storage     | local-lvm                 | storage location for container disk                    |
-| --templates   | local                     | storage location for templates                         |
-| --swap        | 0                         | amount of SWAP                                         |
+| argument           | default             | description                                            |
+|--------------------|---------------------|--------------------------------------------------------|
+| --id          | $nextid             | container id                                           |
+| --bridge      | vmbr0               | bridge used for eth0                                   |
+| --cores       | 1                   | number of cpu cores                                    |
+| --disksize    | 2G                  | size of disk                                           |
+| --hostname    | nginx-proxy-manager | hostname of the container                              |
+| --memory      | 512                 | amount of memory                                       |
+| --storage     | local-zfs           | storage location for container disk                    |
+| --templates   | local               | storage location for templates                         |
+| --swap        | 0                   | amount of SWAP                                         |
 
 you can set these parameters by appending ` -- <parameter> <value>` like:
 
 ```bash
-curl -sL https://raw.githubusercontent.com/realashleybailey/nginx-proxy-manager-lxc/main/create.sh | bash -s -- --cores 4
+curl -sL https://raw.githubusercontent.com/siberianlove/nginx-proxy-manager-lxc/main/create.sh | bash -s -- --cores 4
 ```
 
 ### Console
@@ -44,5 +44,5 @@ If you are not using proxmox or want to install this on a existing Alpine box, y
 ***Note:*** _Only Alpine, Debian and Ubuntu are currently supported by this script_
 
 ```bash
-wget --no-cache -qO - https://raw.githubusercontent.com/realashleybailey/nginx-proxy-manager-lxc/main/setup.sh | sh
+wget --no-cache -qO - https://raw.githubusercontent.com/siberianlove/nginx-proxy-manager-lxc/main/setup.sh | sh
 ```
